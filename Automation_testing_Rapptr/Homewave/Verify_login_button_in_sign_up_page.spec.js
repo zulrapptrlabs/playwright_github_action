@@ -6,6 +6,6 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: 'Sign up' }).click();
   await page.getByRole('link', { name: 'Log in' }).click();
 
-  //  a title "to contain" a substring.
+  //  Verify title "to contain" a substring.
   await expect(page).toHaveTitle(/Log in/);
 });
