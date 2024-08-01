@@ -25,8 +25,17 @@ test('Log non call activity', async () => {
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill('xIrYq1szG1sjR7J3TPjo');
   await page.getByRole('textbox', { name: 'Password' }).press('Enter');
-  await page.pause();
-
+  await page.getByPlaceholder('Search Existing Leads').click();
+  await page.getByPlaceholder('Search Existing Leads').fill('regression');
+  await page.waitForTimeout(7000);
+  await page.waitForSelector('.sc-fMvtBK > button', { state: 'visible' });
+  await page.locator('.sc-fMvtBK > button').first().click();
+  await page.getByRole('button', { name: 'Log Non-Call Activity' }).click();
+  await page.getByRole('button', { name: 'No Contact' }).click();
+  await page.getByRole('button', { name: 'Log Other Activity' }).click();
+  await page.getByRole('button', { name: 'Left Voicemail A voicemail' }).click();
+  await page.getByRole('button', { name: 'Confirm Result' }).click();
+  await page.pause()
 
 
 
