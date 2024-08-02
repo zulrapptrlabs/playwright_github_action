@@ -28,14 +28,13 @@ test('Log non call activity', async () => {
   await page.getByPlaceholder('Search Existing Leads').click();
   await page.getByPlaceholder('Search Existing Leads').fill('regression');
   await page.waitForTimeout(7000);
-  await page.waitForSelector('.sc-fMvtBK > button', { state: 'visible' });
-  await page.locator('.sc-fMvtBK > button').first().click();
+  await page.locator('div:nth-child(1) > div > div > .sc-gHHTUS > .sc-ezXQAu > .sc-gJLCiq > .sc-frSMQm > .sc-gJNiKh > .sc-kJJeMD > .sc-hHEYXH > button').click();
+  // await page.waitForSelector('.sc-fMvtBK > button', { state: 'visible' });
   await page.getByRole('button', { name: 'Log Non-Call Activity' }).click();
   await page.getByRole('button', { name: 'No Contact' }).click();
   await page.getByRole('button', { name: 'Log Other Activity' }).click();
   await page.getByRole('button', { name: 'Left Voicemail A voicemail' }).click();
   await page.getByRole('button', { name: 'Confirm Result' }).click();
-  await page.pause()
 
 
 
