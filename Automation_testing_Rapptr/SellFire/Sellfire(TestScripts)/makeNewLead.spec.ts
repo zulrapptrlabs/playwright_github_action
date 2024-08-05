@@ -1,6 +1,6 @@
-import { microphonePermission } from './Pages(Sellfire)//microphonePermission';
+import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
-import loginPage from './Pages(Sellfire)/loginPage';
+import loginPage from '../Pages(Sellfire)/loginPage';
 
 
 test('Make a new lead', async () => {

@@ -1,7 +1,7 @@
-import { microphonePermission } from './Pages(Sellfire)/microphonePermission';
+import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
-import loginPage from './Pages(Sellfire)/loginPage';
-import dialerPage from './Pages(Sellfire)/dialerPage';
+import loginPage from '../Pages(Sellfire)/loginPage';
+import dialerPage from '../Pages(Sellfire)/dialerPage';
 
 
 test('Call test', async () => {
