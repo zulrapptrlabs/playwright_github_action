@@ -19,7 +19,7 @@ test('dynamic button names test', async () => {
     await page.getByRole('textbox', { name: 'Password' }).click();
     await page.getByRole('textbox', { name: 'Password' }).fill('xIrYq1szG1sjR7J3TPjo');
     await page.getByRole('textbox', { name: 'Password' }).press('Enter');
-    await page.waitForTimeout(10001);
+    await page.waitForTimeout(10000);
 
     // Check for different button names and click accordingly
     if (await page.getByRole('button', { name: 'CALL PRIMARY' }).isVisible()) {
