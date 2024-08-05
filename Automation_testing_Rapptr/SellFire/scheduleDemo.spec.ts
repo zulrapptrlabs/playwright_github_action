@@ -3,7 +3,7 @@ import { test, expect, chromium } from '@playwright/test';
 import loginPage from './Pages(Sellfire)/loginPage';
 
 
-test('Log non call activity', async () => {
+test('Schedule a demo', async () => {
     // Launch a new browser
     const browser = await chromium.launch();
 
