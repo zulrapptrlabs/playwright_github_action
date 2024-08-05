@@ -1,20 +1,19 @@
 import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
-import loginPage from '../Pages(Sellfire)/loginPage';
+import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 import dialerPage from '../Pages(Sellfire)/dialerPage';
 
 
 test('Call test', async () => {
   // Launch a new browser
   const browser = await chromium.launch();
-
   const context = await browser.newContext(microphonePermission);
 
   // Use the new context to open a new page
   const page = await context.newPage();
 
   // Instantiate the loginPage class
-  const login = new loginPage(page);
+  const login = new loginPage(page)
   const dialer = new dialerPage(page)
 
   // Navigate to the login page and perform login

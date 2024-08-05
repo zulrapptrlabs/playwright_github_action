@@ -1,6 +1,6 @@
 import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
-import loginPage from '../Pages(Sellfire)/loginPage';
+import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 
 
 test('Make a new lead', async () => {
@@ -21,6 +21,7 @@ test('Make a new lead', async () => {
   await login.enterPassword('xIrYq1szG1sjR7J3TPjo');
   await login.clickLoginButton();
 
+  // Begin the Add lead flow
   await page.getByRole('button', { name: 'Add Lead' }).click();
   await page.locator('input[name="phone_number"]').click();
   const randomPhoneNumber = (Math.floor(Math.random() * 9000000000) + 1000000000).toString();
