@@ -33,7 +33,7 @@ export default class salePage {
     }
 
     async priceTextBox(Price: string) {
-        await this.page.locator("").type(Price);
+        await this.page.locator("//input[@class='sc-jeGSBP iidKGc']").type(Price);
     }
 
     async discountDropdown() {
@@ -50,7 +50,7 @@ export default class salePage {
     }
 
     async mmrTextBox(MMR: string) {
-        await this.page.locator("").type(MMR);
+        await this.page.locator("//input[@name='mrr']").fill(MMR);
     }
 
     async clickNextButtonSalePage() {

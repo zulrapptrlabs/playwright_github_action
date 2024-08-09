@@ -19,14 +19,20 @@ export default class confirmAccountDetails {
         await this.page.locator("//input[@name='first_name']").type(FirstName);
 
     }
+
+    async enterZipCode(Zipcode: string) {
+        await this.page.locator("//input[@name='zip']").type(Zipcode);
+    }
+
     async enterLastName(LastName: string) {
         await this.page.locator("//input[@name='last_name']").type(LastName);
 
     }
 
 
-    async enterPhoneNumber(PhoneNumber: string) {
-        await this.page.locator("//input[@name='phone_number']").type(PhoneNumber);
+    async enterPhoneNumber() {
+        const randomPhoneNumber = (Math.floor(Math.random() * 9000000000) + 1000000000).toString();
+        await this.page.locator("//input[@name='phone_number']").fill(randomPhoneNumber);
 
     }
     async enterSaleNote(SaleNotes: string) {

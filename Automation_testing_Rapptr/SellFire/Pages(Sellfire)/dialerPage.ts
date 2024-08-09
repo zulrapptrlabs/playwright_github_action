@@ -5,7 +5,7 @@ export default class dialerPage {
 
 
     async callButton() {
-        await this.page.locator('#root > div.sc-kBgaMi.jishmL > div.sc-iHbOXn.ihtWmE > div > div > div.sc-elToUV.jABGzl > div > div:nth-child(2) > div.sc-ezXQAu.pTeTY > div.sc-gJLCiq.kMUfjx > div.sc-kBizdN.gGaVww > div:nth-child(1) > div:nth-child(3) > div.sc-gVpmeh.gCLILR > div:nth-child(1) > button').first().click();
+        await this.page.locator("//div[@class='sc-lavCsO iDRnjM']//div[3]//div[1]/button[@class='sc-jqnWEz kmZGGf']").click();
     }
 
     async smsButton() {
