@@ -63,10 +63,14 @@ test('Make A Sale', async () => {
     //await sale.contractDuration();
     //await sale.paymentTerms();
     await sale.openProductDropdown();
-    await sale.paymentDropdownOption();
+    await sale.productDropdownOption();
     await sale.quantityAdd();
+    await sale.paymentTermsOpen();
+    await sale.paymentTermsSelect();
+    await sale.leadSourceDropdownOpen();
+    await sale.leadSourceDropdownSelect();
     // await sale.priceTextBox("100");
-    //await sale.mmrTextBox("100");
+    await sale.mmrTextBox();
     await page.getByRole('button', { name: 'Next', exact: true }).click();
 
 

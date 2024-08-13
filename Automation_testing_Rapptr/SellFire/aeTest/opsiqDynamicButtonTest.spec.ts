@@ -4,7 +4,7 @@ import { test, expect, chromium } from '@playwright/test';
 test('dynamic button names test', async () => {
   test.setTimeout(120000);
   const browser = await chromium.launch({
-    headless: true,  // Run in headful mode to see the browser
+    headless: false,  // Run in headful mode to see the browser
     slowMo: 1000,
   });
   try {

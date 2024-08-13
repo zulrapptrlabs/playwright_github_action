@@ -15,21 +15,28 @@ export default class salePage {
 
     }
 
-    async paymentTerms() {
-        await this.page.locator("//button[@class='sc-laRPJI bUJbls']").click();
+    async paymentTermsOpen() {
+        await this.page.locator('div:nth-child(4) > .sc-kIeTtH > .css-2b097c-container > .css-1p3mh5t-control > .css-18y8ppy').click();
 
     }
+
+    async paymentTermsSelect() {
+        await this.page.locator('#react-select-21-option-0').click();
+
+    }
+
     async openProductDropdown() {
-        await this.page.locator("#root > div.sc-hFIzcO.cKTziV > div.sc-kCdhpL.hfESOm > div > div > div.sc-cHwTsR.jdRjaa > div > div.sc-qDynd.UZIDe > div > div.sc-kkQtUC.gDkOym > div.sc-eLgOdN.sc-cTmeZk.kjnVLY.bmAsUO > div.sc-eLgOdN.sc-gHxKDd.ifnZSW.dvsNKY > div:nth-child(2) > div > div").click();
+        await this.page.locator('div').filter({ hasText: /^Select a product$/ }).first().click();
+
 
     }
-    async paymentDropdownOption() {
-        await this.page.locator(".sc-gHxKDd > div:nth-of-type(2) .css-11hpibo-singleValue").click();
+    async productDropdownOption() {
+        await this.page.locator('#react-select-16-option-0').click();
     }
 
 
     async quantityAdd() {
-        await this.page.locator("//button[@class='sc-laRPJI bUJbls']").click();
+        await this.page.locator("[alt='up'] .injected-svg").click();
     }
 
     async quantitySubtract() {
@@ -49,12 +56,17 @@ export default class salePage {
 
     }
 
-    async leadSourceDropdown() {
-        await this.page.locator("//button[@class='sc-laRPJI bUJbls']").click();
+    async leadSourceDropdownOpen() {
+        await this.page.locator('.css-aoqas2-control > .css-18y8ppy').click();
     }
 
-    async mmrTextBox(MMR: string) {
-        await this.page.locator("//input[@name='mrr']").fill(MMR);
+    async leadSourceDropdownSelect() {
+        await this.page.locator('#react-select-19-option-0').click();
+    }
+
+
+    async mmrTextBox() {
+        await this.page.locator('input[name="mrr"]').fill('100');
     }
 
     async clickNextButtonSalePage() {
