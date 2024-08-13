@@ -5,8 +5,12 @@ import dialerPage from '../Pages(Sellfire)/dialerPage';
 
 
 test('Call test', async () => {
+  test.setTimeout(120000);
   // Launch a new browser
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    headless: true,  // Run in headful mode to see the browser
+    slowMo: 1000,
+  });
   const context = await browser.newContext(microphonePermission);
 
   // Use the new context to open a new page
@@ -26,12 +30,12 @@ test('Call test', async () => {
   await dialer.callButton();
 
   // Go through the call flow
-  await page.getByRole('button', { name: 'Hang up' }).click();
+  await page.locator("//img[@alt='Hang up']").click();
   await page.getByRole('button', { name: 'No Contact', exact: true }).click();
   await page.getByRole('button', { name: 'Log Other Call Result' }).click();
-  await page.getByRole('button', { name: 'Left Voicemail A voicemail' }).click();
+  await page.getByText("Left Voicemail").click();
   await page.getByRole('button', { name: 'Confirm Call Option' }).click();
-  await page.locator('#logout-text').click();
+  await page.locator('#logout-text').click(); await page.locator('body').click();
 
   // Close the browser
   await browser.close();

@@ -27,4 +27,5 @@ test('Log into shobizzy account', async ({ page }) => {
   await page.goto('https://shobizzy-dev.vercel.app/feed');
   await page.getByRole('link', { name: 'Grump Srump', exact: true }).click();
   await page.getByRole('link', { name: 'Grump Srump', exact: true }).click();
+  await page.close();
 });

@@ -4,8 +4,12 @@ import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 
 
 test('Make a new lead', async () => {
+  test.setTimeout(120000);
   // Launch a new browser
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    headless: true,  // Run in headful mode to see the browser
+    slowMo: 1000,
+  });
 
   const context = await browser.newContext(microphonePermission);
 

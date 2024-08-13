@@ -4,8 +4,13 @@ import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 
 
 test('Log non call activity', async () => {
+  test.setTimeout(120000);
+  const browser = await chromium.launch({
+    headless: true,  // Run in headful mode to see the browser
+    slowMo: 1000,
+  });
   // Launch a new browser
-  const browser = await chromium.launch();
+
 
   const context = await browser.newContext(microphonePermission);
 

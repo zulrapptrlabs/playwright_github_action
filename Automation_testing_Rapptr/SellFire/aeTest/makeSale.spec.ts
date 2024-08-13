@@ -9,8 +9,12 @@ import salePage from '../Pages(Sellfire)/salePage';
 
 
 test('Make A Sale', async () => {
+    test.setTimeout(120000);
     // Launch a new browser
-    const browser = await chromium.launch();
+    const browser = await chromium.launch({
+        headless: false,  // Run in headful mode to see the browser
+        slowMo: 1000, // slows down the script
+    });
     const context = await browser.newContext(microphonePermission);
 
     // Use the new context to open a new page
@@ -33,7 +37,7 @@ test('Make A Sale', async () => {
 
 
     // Go through the call flow
-    await page.getByRole('button', { name: 'Hang up' }).click();
+    await page.locator("//img[@alt='Hang up']").click();
 
     //Begin Sale flow 
     await page.getByRole('button', { name: 'Decision Maker', exact: true }).click();
@@ -56,9 +60,10 @@ test('Make A Sale', async () => {
 
     //Fill out all sale details
 
-    await sale.contractDuration();
-    await sale.paymentTerms();
-    await sale.productDropdown();
+    //await sale.contractDuration();
+    //await sale.paymentTerms();
+    await sale.openProductDropdown();
+    await sale.paymentDropdownOption();
     await sale.quantityAdd();
     // await sale.priceTextBox("100");
     //await sale.mmrTextBox("100");

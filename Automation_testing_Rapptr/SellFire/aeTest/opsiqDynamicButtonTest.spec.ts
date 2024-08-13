@@ -2,9 +2,10 @@
 import { test, expect, chromium } from '@playwright/test';
 
 test('dynamic button names test', async () => {
+  test.setTimeout(120000);
   const browser = await chromium.launch({
-    headless: false,  // Run in headful mode to see the browser
-    slowMo: 500,
+    headless: true,  // Run in headful mode to see the browser
+    slowMo: 1000,
   });
   try {
     const context = await browser.newContext({
@@ -24,7 +25,7 @@ test('dynamic button names test', async () => {
     // Check for different button names and click accordingly
     if (await page.getByRole('button', { name: 'CALL PRIMARY' }).isVisible()) {
       await page.getByRole('button', { name: 'CALL PRIMARY' }).click();
-      await page.getByRole('button', { name: 'Hang up' }).click();
+      await page.locator("//img[@alt='Hang up']").click();
       await page.getByRole('button', { name: 'No Contact', exact: true }).click();
       await page.getByRole('button', { name: 'Log Other Call Result' }).click();
       await page.getByRole('button', { name: 'Left Voicemail A voicemail' }).click();
