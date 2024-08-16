@@ -79,9 +79,4 @@ test('Make A Sale', async () => {
     await page.getByRole('button', { name: 'Confirm Sale' }).click();
 
 
-
-
-
-
-
 });
