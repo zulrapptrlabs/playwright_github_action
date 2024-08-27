@@ -9,4 +9,5 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'close' }).nth(2).click();
   await page.getByRole('button', { name: 'previous' }).nth(3).click();
   await page.getByRole('button', { name: 'close' }).nth(3).click();
+  await page.close();
 });
