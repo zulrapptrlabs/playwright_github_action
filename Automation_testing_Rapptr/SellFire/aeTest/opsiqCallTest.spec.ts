@@ -5,6 +5,7 @@ import dialerPage from '../Pages(Sellfire)/dialerPage';
 
 test.describe("Making calls", () => {
   
+
   test('Call test', async () => {
     test.setTimeout(120000);
     // Launch a new browser
@@ -26,6 +27,8 @@ test.describe("Making calls", () => {
     await login.enterUserName('aetest@rapptrlabs.com');
     await login.enterPassword('xIrYq1szG1sjR7J3TPjo');
     await login.clickLoginButton();
+
+    await page.pause();
 
     // Click on the call button in a lead card
     await dialer.callButton();

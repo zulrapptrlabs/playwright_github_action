@@ -3,10 +3,10 @@ import { test, expect, chromium } from '@playwright/test';
 
 test.describe("Dynamic button names", () => {
 test('dynamic button names test', async () => {
-  test.setTimeout(120000);
-  const browser = await chromium.launch({
-    headless: false,  // Run in headful mode to see the browser
-    slowMo: 1000,
+    test.setTimeout(120000);
+    const browser = await chromium.launch({
+      headless: false,  // Run in headful mode to see the browser
+      slowMo: 1000,
   });
   try {
     const context = await browser.newContext({
