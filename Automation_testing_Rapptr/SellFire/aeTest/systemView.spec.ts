@@ -2,6 +2,7 @@ import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
 import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 
+test.describe("System View", () => {
 let page;
 
 test.beforeAll(async ({ browser }) => {
@@ -42,4 +43,5 @@ test('Verify that No errors occur when attempting to filter leads ', async () =>
 
 test('Verify no visual glitches when editing columns ', async () => {
 
+    });
 });

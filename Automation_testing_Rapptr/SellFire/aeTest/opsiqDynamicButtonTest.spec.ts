@@ -1,6 +1,7 @@
 //const { test, chromium } = require('@playwright/test');
 import { test, expect, chromium } from '@playwright/test';
 
+test.describe("Dynamic button names", () => {
 test('dynamic button names test', async () => {
   test.setTimeout(120000);
   const browser = await chromium.launch({
@@ -57,4 +58,6 @@ test('dynamic button names test', async () => {
   finally {
     await browser.close(); // Ensure the browser closes properly after all operations
   }
+});
+
 });

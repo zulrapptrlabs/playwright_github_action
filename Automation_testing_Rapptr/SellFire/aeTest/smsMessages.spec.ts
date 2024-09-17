@@ -2,6 +2,7 @@ import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
 import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 
+test.describe("SMS Messages", () => {
 let page;
 
 test.beforeAll(async ({ browser }) => {
@@ -30,4 +31,5 @@ test('Send an inbound text message (SMS) to the AE/SDR Reps phone number, a noti
 
 test('Verify that the OPT-in Message is being sent the first time contacting a lead ', async () => {
 
+    });
 });

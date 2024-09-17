@@ -3,6 +3,7 @@ import { microphonePermission } from '../Pages(Sellfire)/microphonePermission';
 import { test, expect, chromium } from '@playwright/test';
 import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 
+test.describe("My Notifications", () => {
 let page;
 
 test.beforeAll(async ({ browser }) => {
@@ -32,4 +33,5 @@ test('View notifications for an inbound SMS message', async () => {
 
 test("View all button in notifications shows you all notifications", async () => {
 
+    });
 });

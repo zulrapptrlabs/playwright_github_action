@@ -3,7 +3,7 @@ import { test, expect, chromium, ElementHandle } from '@playwright/test';
 import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 import dialerPage from '../Pages(Sellfire)/dialerPage';
 
-
+test.describe("Schedule a demo", () => {
 
 test('Schedule a demo', async () => {
     test.setTimeout(120000);
@@ -78,5 +78,6 @@ test('Schedule a demo', async () => {
     await page.locator("//input[@name='primary_email']").fill("testopsiq@gmail.com");
     await page.getByRole('button', { name: 'Next', exact: true }).click();
     await page.getByRole('button', { name: 'CONFIRM SCHEDULE DEMO' }).click();
-    // await expect(page.locator('.sc-bmhdWt')).toBeVisible({ timeout: 10000 });
+        // await expect(page.locator('.sc-bmhdWt')).toBeVisible({ timeout: 10000 });
+    });
 });

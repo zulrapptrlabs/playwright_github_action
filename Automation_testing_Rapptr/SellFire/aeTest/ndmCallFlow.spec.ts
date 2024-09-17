@@ -3,9 +3,10 @@ import { test, expect, chromium, ElementHandle } from '@playwright/test';
 import loginPage from '../Pages(Sellfire)/sellfireLoginPage';
 import dialerPage from '../Pages(Sellfire)/dialerPage';
 
+test.describe("NDM dispositions", () => {
 
-test('NDM dispositions(random)', async () => {
-    test.setTimeout(120000);
+    test('NDM dispositions(random)', async () => {
+        test.setTimeout(120000);
     // Launch a new browser
     const browser = await chromium.launch({
         headless: false,  // Run in headful mode to see the browser
@@ -51,6 +52,6 @@ test('NDM dispositions(random)', async () => {
     await page.getByRole('button', { name: 'Confirm Call Option' }).click();
 
     await browser.close();
-
+    });
 });
 
