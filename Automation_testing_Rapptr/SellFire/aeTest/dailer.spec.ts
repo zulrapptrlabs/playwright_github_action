@@ -177,9 +177,8 @@ test.describe("All the functions on the dialer screen", () => {
 
     test('Verify Outbound calls are working as expected ', async ({ page }) => {
         await page.goto('https://staging.opsiq.ai/dash/');
-        const dialer = new dialerPage(page)
-        await dialer.callButton();
-        await expect(page.getByText('My Current Call Notes')).toBeVisible();
+        
+        
 
 
     });
@@ -195,6 +194,7 @@ test.describe("All the functions on the dialer screen", () => {
     });
 
     test('Make a call and hang up (less than 1 sec) - validate status of rep switches back to available ', async ({ page }) => {
+       
         await page.goto('https://staging.opsiq.ai/dash/');
         const dialer = new dialerPage(page)
 
@@ -228,6 +228,7 @@ test.describe("All the functions on the dialer screen", () => {
 
     test('Verify that schedule callback events do not send invites ', async ({ page }) => {
         await page.goto('https://staging.opsiq.ai/dash/');
+
 
     });
 

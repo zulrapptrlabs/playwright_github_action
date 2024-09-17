@@ -5,7 +5,7 @@ export default class dialerPage {
 
 
     async callButton() {
-        await this.page.locator("//div[@class='sc-lavCsO iDRnjM']//div[3]//div[1]/button[@class='sc-jqnWEz kmZGGf']").click();
+        await this.page.locator("#leadCardContactButton-phone-nextDial").click();
     }
 
     async smsButton() {
@@ -44,3 +44,4 @@ export default class dialerPage {
     }
 
 }
+
