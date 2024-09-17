@@ -13,7 +13,7 @@ test.describe("Making sales", () => {
         test.setTimeout(120000);
         // Launch a new browser
         const browser = await chromium.launch({
-            headless: false,  // Run in headful mode to see the browser
+            headless: true,  // Run in headless mode
             slowMo: 1000, // slows down the script
         });
         const context = await browser.newContext(microphonePermission);

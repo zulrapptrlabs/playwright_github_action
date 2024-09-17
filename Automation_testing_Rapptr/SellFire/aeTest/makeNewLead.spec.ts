@@ -8,7 +8,7 @@ test.describe("Making New leads", () => {
     test.setTimeout(120000);
     // Launch a new browser
     const browser = await chromium.launch({
-      headless: false,  // Run in headful mode to see the browser
+      headless: true,  // Run in headless mode
       slowMo: 1000,
     });
 

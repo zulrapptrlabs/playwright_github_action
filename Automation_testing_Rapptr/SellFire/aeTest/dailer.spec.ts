@@ -11,7 +11,7 @@ test.describe("All the functions on the dialer screen", () => {
         page: async ({ browser }, use) => {
 
             const browserInstance = await chromium.launch({
-                headless: false,
+                headless: true,
                 slowMo: 1000,
             });
 

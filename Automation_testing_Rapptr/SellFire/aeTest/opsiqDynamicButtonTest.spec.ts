@@ -5,7 +5,7 @@ test.describe("Dynamic button names", () => {
 test('dynamic button names test', async () => {
     test.setTimeout(120000);
     const browser = await chromium.launch({
-      headless: false,  // Run in headful mode to see the browser
+      headless: true,  // Run in headless mode
       slowMo: 1000,
   });
   try {

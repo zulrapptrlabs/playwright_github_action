@@ -8,7 +8,7 @@ test.describe("Non call Activities", () => {
   test('Log non call activity', async () => {
     test.setTimeout(120000);
     const browser = await chromium.launch({
-      headless: false,  // Run in headful mode to see the browser
+      headless: true,  // Run in headless mode
       slowMo: 1000,
     });
     // Launch a new browser
