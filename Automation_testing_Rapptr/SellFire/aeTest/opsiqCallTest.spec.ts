@@ -28,7 +28,7 @@ test.describe("Making calls", () => {
     await login.enterPassword('xIrYq1szG1sjR7J3TPjo');
     await login.clickLoginButton();
 
-    await page.pause();
+    
 
     // Click on the call button in a lead card
     await dialer.callButton();
